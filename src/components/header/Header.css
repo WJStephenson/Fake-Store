@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #3A4895;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 100px;
+}
+
+i {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.shopping-cart {
+    position: relative;
+}
+
+.cart-display {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+
+    position: absolute;
+    top: -5px;
+    right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-count {
+    font-size: 12px;
+    color: white;
+}
