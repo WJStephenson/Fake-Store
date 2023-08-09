@@ -1,0 +1,13 @@
+.homepage-container {
+    min-height: 100vh;
+}
+
+.product-container {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    max-width: 1200px;
+}

@@ -1,0 +1,16 @@
+.filter-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 1rem auto;
+}
+
+.filter-container button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5264C3;
+    font-size: 20px;
+    padding: 5px;
+}

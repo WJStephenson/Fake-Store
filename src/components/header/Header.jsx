@@ -1,7 +1,7 @@
 import './Header.css'
 import { HiOutlineShoppingCart as Cart } from 'react-icons/hi'
 
-export function Header() {
+function Header() {
   return (
     <div className="header-container">
         <h1>Fake Store </h1>
@@ -14,3 +14,5 @@ export function Header() {
     </div>
   )
 }
+
+export default Header
