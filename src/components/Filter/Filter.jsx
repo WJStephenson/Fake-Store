@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './Filter.css'
 import axios from 'axios';
+import FilterButton from '../FilterButton/FilterButton';
 
 function Filter({ setProducts }) {
+
+  const buttons = ["All", "Electronics", "Jewelery", "Men's Clothing", "Women's Clothing"]
 
   //set up state to store the button clicked
   const [filter, setFilter] = useState('');
@@ -27,11 +30,12 @@ function Filter({ setProducts }) {
 
   return (
     <div className='filter-container'>
-      <button value="all" onClick={filterResults}>All</button>
-      <button value="electronics" onClick={filterResults}>Electronics</button>
-      <button value="jewelery" onClick={filterResults}>Jewelery</button>
-      <button value="men's clothing" onClick={filterResults}>Men's Clothing</button>
-      <button value="women's clothing" onClick={filterResults}>Women's Clothing</button>
+      {buttons.map((item, index) => (
+        <FilterButton
+          key={index}
+          item={item}
+          filterResults={filterResults}/>
+      ))}
     </div>
   )
 }
