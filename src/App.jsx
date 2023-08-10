@@ -9,7 +9,6 @@ function App() {
   return (
     <div>
       <Header />
-      <Filter />
       <Homepage />
       <Footer />
     </div>

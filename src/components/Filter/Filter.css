@@ -13,4 +13,9 @@
     color: #5264C3;
     font-size: 20px;
     padding: 5px;
+    user-select: none;
+}
+
+.filter-container button:hover {
+    text-decoration: underline;
 }
