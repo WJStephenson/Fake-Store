@@ -5,7 +5,26 @@ import FilterButton from '../FilterButton/FilterButton';
 
 function Filter({ setProducts }) {
 
-  const buttons = ["All", "Electronics", "Jewelery", "Men's Clothing", "Women's Clothing"]
+  const [category, setCategory] = useState([]);
+
+  axios.get('https://fakestoreapi.com/products/categories')
+    .then(res => {
+      const categories = capitalizeArray(res.data)
+      setCategory(categories)
+    })
+    .catch(err => console.log(err)
+  )
+
+  function capitalizeArray(arr) {
+    const capitalizedArray = arr.map((string) => {
+      return string
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    });
+
+    return capitalizedArray;
+  }
 
   //set up state to store the button clicked
   const [filter, setFilter] = useState('');
@@ -30,11 +49,12 @@ function Filter({ setProducts }) {
 
   return (
     <div className='filter-container'>
-      {buttons.map((item, index) => (
+      <FilterButton key={0} item="All" filterResults={filterResults} />
+      {category.map((item, index) => (
         <FilterButton
-          key={index}
+          key={index + 1}
           item={item}
-          filterResults={filterResults}/>
+          filterResults={filterResults} />
       ))}
     </div>
   )

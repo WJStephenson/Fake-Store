@@ -1,0 +1,33 @@
+.detail-container {
+    margin: auto;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    gap: 150px;
+}
+
+.detail-container img {
+    max-height: 300px;
+    max-width: 200px;
+}
+
+.detail-container h3, .detail-container p, .detail-container h4 {
+    color: black;
+}
+
+.detail-container button {
+    width: 60%;
+    background-color: #FFD814;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}

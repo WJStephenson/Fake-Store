@@ -12,8 +12,10 @@
     font-size: 12px;
 }
 
-.footer-container button {
+.footer-container a {
     background-color: transparent;
+    font-size: .75rem;
+    text-decoration: none;
     border: none;
     outline: none;
     cursor: pointer;

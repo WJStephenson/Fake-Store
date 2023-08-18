@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #3A4895;
+    font-weight: bold;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: #3A4895;
