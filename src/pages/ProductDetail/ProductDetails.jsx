@@ -41,7 +41,7 @@ function ProductDetails() {
                 <p>{product.description}</p>
                 {
                     inCart?
-                    <button onClick={() => removeProduct(product.id)}>Remove from Cart</button>
+                    <button onClick={() => removeProduct(product.id)}>Remove</button>
                     :
                     <button onClick={() => addProduct(product)}>Add to Cart</button>
                 }
