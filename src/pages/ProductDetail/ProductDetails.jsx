@@ -26,7 +26,7 @@ function ProductDetails() {
 
     useEffect(
         () => {
-            setInCart(cart?.find(item => item.id === product.id))
+            setInCart(cart?.find(item => item.id == productid))
         }, [cart]
     )
 

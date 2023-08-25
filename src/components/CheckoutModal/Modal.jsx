@@ -2,8 +2,11 @@ import React, { useContext } from 'react'
 import './Modal.css'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 function Modal({ isOpen, onClose }) {
+
+    let navigate = useNavigate()
 
     if (!isOpen) return null;
 
@@ -12,6 +15,7 @@ function Modal({ isOpen, onClose }) {
     const orderComplete = () => {
         onClose()
         setCart([])
+        navigate("/")
     }
 
     return (
@@ -21,7 +25,7 @@ function Modal({ isOpen, onClose }) {
                     <div className="modal-content">
                         <p>Your Order was successful!</p>
                         <p>Check your email for the order confirmation. Thank you for shopping with Fake Store!</p>
-                        <Link to={"/"}><button onClick={orderComplete}>Return to Main Page</button></Link>
+                        <button onClick={orderComplete}>Return to Main Page</button>
                     </div>
                     :
                     <div className="modal-content">
