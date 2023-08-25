@@ -5,20 +5,25 @@ import Header from './components/header/Header'
 import Homepage from './pages/Homepage/Homepage'
 import ContactUs from './pages/ContactUs/ContactUs'
 import ProductDetails from './pages/ProductDetail/ProductDetails'
+import Checkout from './pages/Checkout/Checkout'
+import CartContextProvider from './context/CartContext'
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <CartContextProvider>
+        <Header />
 
-      <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/contactus' element={<ContactUs />} />
-        <Route path='/details/:productid' element={<ProductDetails />} />
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/contactus' element={<ContactUs />} />
+          <Route path='/details/:productid' element={<ProductDetails />} />
+          <Route path='/checkout' element={<Checkout />} />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </CartContextProvider>
     </BrowserRouter>
   )
 }

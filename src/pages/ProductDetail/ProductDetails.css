@@ -1,11 +1,14 @@
 .detail-container {
-    margin: auto;
-    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 600px;
-    gap: 150px;
+    gap: 8rem;
+    margin: auto;
+    margin-bottom: 20vh;
+    padding: 5rem;
+    background-color: white;
+    max-width: 900px;
+    min-height: 80vh;
 }
 
 .detail-container img {
@@ -18,7 +21,7 @@
 }
 
 .detail-container button {
-    width: 60%;
+    width: 150px;
     background-color: #FFD814;
     padding: 12px;
     border: none;
@@ -30,4 +33,18 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+}
+
+@media  (max-width: 710px) {
+    .detail-container {
+        flex-direction: column;
+        max-width: 500px;
+        padding: 2rem;
+        gap: 4rem;
+    }
+
+    .detail-container button {
+        margin: auto;
+    }
+    
 }

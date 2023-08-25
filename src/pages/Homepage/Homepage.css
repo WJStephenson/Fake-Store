@@ -1,5 +1,7 @@
 .homepage-container {
     min-height: 100vh;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .product-container {
@@ -7,7 +9,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
+}
 
-    max-width: 1200px;
+@media  (max-width: 510px) {
+    .product-container {
+        column-gap: 10px;
+    }
+    
 }

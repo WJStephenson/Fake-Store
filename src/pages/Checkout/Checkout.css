@@ -1,0 +1,93 @@
+.checkout-wrapper {
+    min-height: 100vh;
+    position: relative;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    max-width: 1200px;
+    background-color: white;
+    margin: 5rem auto;
+    color: black;
+}
+
+.column-headings {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    color: #979797;
+    font-size: 1rem;
+}
+
+.column-headings > h3 {
+    margin-left: 2rem;
+}
+
+.sub-headings {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.sub-headings h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.cart-contents {
+    width: 100%;
+}
+
+.cart-contents p {
+    text-align: center;
+    padding: 2rem;
+}
+
+.line-break {
+    width: 100%;
+    height: 3px;
+    background-color: #FAFAFA;
+}
+
+.total-checkout {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    position: relative;
+}
+
+.total-checkout button {
+    border: none;
+    background-color: #FFD814;
+    padding: 1rem;
+    margin: 5rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.total {
+    display: flex;
+    gap: 1rem;
+    margin-right: 5rem;
+    padding: 1rem;
+}
+
+@media (max-width: 740px) {
+    .column-headings {
+        display: none;
+    }
+
+    .total-checkout button {
+        margin: 1rem 2rem;
+    }
+
+    .total {
+        margin: 1rem;
+    }
+}
