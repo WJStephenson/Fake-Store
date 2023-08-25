@@ -1,8 +1,7 @@
 // this component will return a product card for the homepage with links to more detail and the ability to add the product to the cart
 
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Card.css'
-import axios from 'axios'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'

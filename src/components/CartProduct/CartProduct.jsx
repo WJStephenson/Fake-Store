@@ -1,6 +1,6 @@
 //this component will return a product card for the chkout page with the ability to remove the product from the cart
 
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import './CartProduct.css'
 import { BsFillTrash3Fill as Trash } from "react-icons/bs";
 import { CartContext } from '../../context/CartContext';

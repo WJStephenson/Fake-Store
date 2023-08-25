@@ -1,6 +1,6 @@
 //this page shows the card components based on the returned axios call and filter from the filter component
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './Homepage.css'
 import axios from 'axios'
 import Card from '../../components/Card/Card'

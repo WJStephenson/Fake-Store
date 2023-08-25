@@ -1,6 +1,5 @@
 //this page shows a contact us form
 
-import React from 'react'
 import './ContactUs.css'
 
 function ContactUs() {

@@ -1,6 +1,6 @@
 //this page shows the current products in the basket, the total cost and the checkout button
 
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Checkout.css'
 import { CartContext } from '../../context/CartContext'
 import CartProduct from './../../components/CartProduct/CartProduct';

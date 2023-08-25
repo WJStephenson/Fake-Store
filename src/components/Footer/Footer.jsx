@@ -1,6 +1,5 @@
 //this component returns the page footer
 
-import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
 

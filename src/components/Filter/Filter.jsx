@@ -1,6 +1,6 @@
 //this component will filter the page based on product categories and an axios api call
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './Filter.css'
 import axios from 'axios';
 import FilterButton from '../FilterButton/FilterButton';

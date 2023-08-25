@@ -1,6 +1,5 @@
 //display app.jsx within the created 'root' element
 
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 

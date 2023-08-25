@@ -1,6 +1,6 @@
 //this page shows product details when a card on the homepage is clicked on
 
-import React, { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductDetails.css'
 import axios from 'axios';
