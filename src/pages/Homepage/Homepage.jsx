@@ -22,12 +22,12 @@ function Homepage() {
     //pass setProducts state into the Filter component
     return (
         <div className='homepage-container'>
-            <Filter setProducts={setProducts}/>
+            <Filter setProducts={setProducts} />
             <div className='product-container'>
-                {products.map(item => ( <Card 
-                    key={item.id} 
-                    product={item} 
-                /> ))}
+                {products.map(item => (<Card
+                    key={item.id}
+                    product={item}
+                />))}
             </div>
         </div>
     )

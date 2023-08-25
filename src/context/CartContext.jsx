@@ -6,20 +6,20 @@ export const CartContext = createContext();
 export default function CartContextProvider(props) {
     const [cart, setCart] = useState([]);
 
-    // //get theme from localstorage
-    // useEffect(
-    //     () => {
-    //         const storedFavorites = localStorage.getItem('favoritesList')
-    //         if (storedFavorites) {
-    //             setFavorites(JSON.parse(storedFavorites))
-    //         }
-    //     }, [])
+    //get theme from session storage
+    useEffect(
+        () => {
+            const storedCart = sessionStorage.getItem('cartList')
+            if (storedCart) {
+                setCart(JSON.parse(storedCart))
+            }
+        }, [])
 
-    // //save favorites to local storage
-    // useEffect(
-    //     () => {
-    //         localStorage.setItem('favoritesList', JSON.stringify(favorites))
-    //     }, [favorites])
+    //save favorites to session storage
+    useEffect(
+        () => {
+            sessionStorage.setItem('cartList', JSON.stringify(cart))
+        }, [cart])
 
 
     //create a function to add a character to state
@@ -35,7 +35,7 @@ export default function CartContextProvider(props) {
     }
 
     return (
-        <CartContext.Provider value={{ addProduct, cart, removeProduct }}>
+        <CartContext.Provider value={{ addProduct, cart, removeProduct, setCart }}>
             {props.children}
         </CartContext.Provider>
     );

@@ -18,7 +18,6 @@ function ProductDetails() {
         () => {
             axios.get(`https://fakestoreapi.com/products/${productid}`)
                 .then(res => {
-                    console.log(res)
                     setProduct(res.data)
                 })
                 .catch(err => console.log(err))
@@ -26,7 +25,7 @@ function ProductDetails() {
     )
 
     useEffect(
-        ()=>{
+        () => {
             setInCart(cart?.find(item => item.id === product.id))
         }, [cart]
     )
@@ -40,12 +39,12 @@ function ProductDetails() {
                 <h4>Description</h4>
                 <p>{product.description}</p>
                 {
-                    inCart?
-                    <button onClick={() => removeProduct(product.id)}>Remove</button>
-                    :
-                    <button onClick={() => addProduct(product)}>Add to Cart</button>
+                    inCart ?
+                        <button onClick={() => removeProduct(product.id)}>Remove</button>
+                        :
+                        <button onClick={() => addProduct(product)}>Add to Cart</button>
                 }
-                
+
             </div>
         </div>
     )
