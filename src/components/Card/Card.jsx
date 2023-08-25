@@ -1,3 +1,5 @@
+// this component will return a product card for the homepage with links to more detail and the ability to add the product to the cart
+
 import React, { useContext, useEffect, useState } from 'react'
 import './Card.css'
 import axios from 'axios'
@@ -7,13 +9,16 @@ import { CartContext } from '../../context/CartContext'
 
 function Card({ product }) {
 
+    //retrieve context states and functions from CartContext
     const { cart, addProduct, removeProduct } = useContext(CartContext)
 
-    const [inBasket, setInBasket] = useState(false)
+    //create state to store if this product is already inthe basket
+    const [inCart, setInCart] = useState(false)
 
+    //determine if product is in the cart by usind find
     useEffect(
         () => {
-            setInBasket(cart?.find(item => item.id === product.id))
+            setInCart(cart?.find(item => item.id === product.id))
         }, [cart]
     )
 
@@ -25,10 +30,10 @@ function Card({ product }) {
                 <p>{product.category}</p>
                 <h3>${parseFloat(product.price).toFixed(2)}</h3>
             </Link>
-
+            {/* the heart icon will update and add the product to cart using context functions */}
             <div className='heart-container'>
                 {
-                    inBasket?
+                    inCart?
                         <i className='heart-icon' onClick={()=>removeProduct(product.id)}><AiFillHeart style={{ color: "red" }} /></i>
                         :
                         <i className='heart-icon' onClick={()=>addProduct(product)}><AiOutlineHeart /></i>

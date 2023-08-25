@@ -1,3 +1,5 @@
+//app component brings all pages, routing and context providers together
+
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer/Footer'

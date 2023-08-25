@@ -1,3 +1,5 @@
+//this component will return a product card for the chkout page with the ability to remove the product from the cart
+
 import React, { useContext } from 'react'
 import './CartProduct.css'
 import { BsFillTrash3Fill as Trash } from "react-icons/bs";
@@ -5,8 +7,10 @@ import { CartContext } from '../../context/CartContext';
 
 function CartProduct({ product }) {
 
+  // retrieve context function to remove product from cart
   const { removeProduct } = useContext(CartContext)
 
+  //show product image, price, quantity in cart and icon to remove product. icon will have onclick event to call context function
   return (
     <div className='checkout-product-container'>
       <div className='checkout-product'>

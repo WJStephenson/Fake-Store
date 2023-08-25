@@ -1,3 +1,5 @@
+//this button component is used in the filter component
+
 import React from 'react'
 
 function FilterButton({item, filterResults}) {

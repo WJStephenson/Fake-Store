@@ -1,3 +1,5 @@
+//this component will return a modal to cover the viewport and provide a completion or empty basket message when the checkout button is clicked on the checkout page
+
 import React, { useContext } from 'react'
 import './Modal.css'
 import { Link } from 'react-router-dom';
@@ -6,12 +8,16 @@ import { useNavigate } from 'react-router-dom';
 
 function Modal({ isOpen, onClose }) {
 
+    //set up useNavigate to return to the home page when checkout is complete
     let navigate = useNavigate()
 
+    //return nothing if isOpen prop is set to false
     if (!isOpen) return null;
 
+    //retrieve the context state and functions
     const { cart, setCart } = useContext(CartContext)
 
+    //this function will close the modal, set the cart to empty and then navigate back to the hompage when checkout is complete
     const orderComplete = () => {
         onClose()
         setCart([])
@@ -20,6 +26,8 @@ function Modal({ isOpen, onClose }) {
 
     return (
         <div className="modal-overlay">
+            {/* the modal will either display aa complete message, and return to the hompage, if the basket contains anything;
+            otherwise it will display a cart empty message */}
             {
                 cart.length > 0 ?
                     <div className="modal-content">

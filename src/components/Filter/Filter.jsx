@@ -1,3 +1,5 @@
+//this component will filter the page based on product categories and an axios api call
+
 import React, { useState, useEffect } from 'react'
 import './Filter.css'
 import axios from 'axios';
@@ -5,8 +7,10 @@ import FilterButton from '../FilterButton/FilterButton';
 
 function Filter({ setProducts }) {
 
+  //create state to manage categories
   const [category, setCategory] = useState([]);
 
+  //initial axios call to get all possible categories
   axios.get('https://fakestoreapi.com/products/categories')
     .then(res => {
       const categories = capitalizeArray(res.data)
@@ -15,6 +19,7 @@ function Filter({ setProducts }) {
     .catch(err => console.log(err)
   )
 
+  //function to capitalize categories
   function capitalizeArray(arr) {
     const capitalizedArray = arr.map((string) => {
       return string

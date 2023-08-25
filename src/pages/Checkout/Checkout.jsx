@@ -1,3 +1,5 @@
+//this page shows the current products in the basket, the total cost and the checkout button
+
 import React, { useContext, useEffect, useState } from 'react'
 import './Checkout.css'
 import { CartContext } from '../../context/CartContext'
@@ -6,12 +8,14 @@ import Modal from './../../components/CheckoutModal/Modal';
 
 function Checkout() {
 
+    //retrieve the cart contents from the context state
     const { cart } = useContext(CartContext)
 
+    //states for the total cost of the cart and for the modal being hidden
     const [cost, setCost] = useState(0)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-
+    //update total cost when the cart contents change
     useEffect(
         () => {
             let total = 0;
@@ -20,13 +24,16 @@ function Checkout() {
         }, [cart]
     )
 
+    //set modal open to true
     const openModal = () => {
         setIsModalOpen(true)
     }
 
+    //set modal open to false
     const closeModal = () => {
         setIsModalOpen(false)
     }
+
 
     return (
         <div className='checkout-wrapper'>
@@ -41,6 +48,8 @@ function Checkout() {
                 </div>
                 <div className='line-break'></div>
                 <div className='cart-contents'>
+                    {/* show a message if the cart is empty
+                    show products from cart context state if any */}
                     {
                         cart.length > 0 ?
                             cart.map(item => <CartProduct
@@ -59,6 +68,7 @@ function Checkout() {
                     <button onClick={openModal}>Checkout</button>
                 </div>
             </div>
+            {/* pass props to modal component so it can close itself */}
             <Modal isOpen={isModalOpen} onClose={closeModal} />
         </div>
     )

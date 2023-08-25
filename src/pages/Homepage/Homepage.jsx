@@ -1,3 +1,5 @@
+//this page shows the card components based on the returned axios call and filter from the filter component
+
 import React, { useState, useEffect } from 'react'
 import './Homepage.css'
 import axios from 'axios'
@@ -6,9 +8,10 @@ import Filter from '../../components/Filter/Filter'
 
 function Homepage() {
 
+    //create state to store products to be shown
     const [products, setProducts] = useState([])
 
-    //load all products on page load by using empy array in useEffect []
+    //load all products on page load by using empty dependancy array in useEffect []
     useEffect(() => {
         axios.get(`https://fakestoreapi.com/products`)
             .then(res => {

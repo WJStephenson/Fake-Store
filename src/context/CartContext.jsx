@@ -6,7 +6,7 @@ export const CartContext = createContext();
 export default function CartContextProvider(props) {
     const [cart, setCart] = useState([]);
 
-    //get theme from session storage
+    //get cart from session storage
     useEffect(
         () => {
             const storedCart = sessionStorage.getItem('cartList')
@@ -15,25 +15,26 @@ export default function CartContextProvider(props) {
             }
         }, [])
 
-    //save favorites to session storage
+    //save cart to session storage
     useEffect(
         () => {
             sessionStorage.setItem('cartList', JSON.stringify(cart))
         }, [cart])
 
 
-    //create a function to add a character to state
+    //create a function to add a product to state
     const addProduct = (productToAdd) => {
         let newCart = [...cart, productToAdd]
         setCart(newCart)
     }
 
-    //create function to remove character
+    //create function to remove product
     const removeProduct = (productId) => {
         let newCart = (cart.filter(item => item.id != productId))
         setCart(newCart)
     }
 
+    //pass the values through the contact provider
     return (
         <CartContext.Provider value={{ addProduct, cart, removeProduct, setCart }}>
             {props.children}
